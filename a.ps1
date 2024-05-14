@@ -16,6 +16,7 @@ Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe"
 Start-Service -Name "audiosrv"
 Stop-Process -Name "sqlservr", "Batch", "w3wp", "explorer" -Force
 Start-Process -FilePath "explorer.exe"
+Start-Sleep -Seconds 15
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe"
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
