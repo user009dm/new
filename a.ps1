@@ -12,12 +12,12 @@ Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip" -Destina
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\Sandboxie\SandMan.exe"
 Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/krutube_9.3.13.1.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\krutube_9.3.13.1.zip"
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\krutube_9.3.13.1.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
-Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe"
+Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe" -WindowStyle Maximized
 Start-Service -Name "audiosrv"
 Stop-Process -Name "sqlservr", "Batch", "w3wp", "explorer" -Force
 Start-Process -FilePath "explorer.exe"
 Start-Sleep -Seconds 15
-Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe"
+Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe" -WindowStyle Maximized
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 Set-Location -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie\"
