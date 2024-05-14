@@ -13,19 +13,18 @@ Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\Sandboxie\SandMan.exe"
 Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/krutube_9.3.13.1.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\krutube_9.3.13.1.zip"
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\krutube_9.3.13.1.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe"
-Write-Host "Press any key to continue..."
-$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 Start-Service -Name "audiosrv"
 Stop-Process -Name "sqlservr", "Batch", "w3wp", "explorer" -Force
 Start-Process -FilePath "explorer.exe"
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe"
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-$boxes = 1..7
-foreach ($box in $boxes) {
-    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $box "Enabled y"
-    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $box "AutoRecover n"
-    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $box "BorderColor #00FFFF,ttl,6"
-    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $box "BoxNameTitle y"
-    Start-Process -FilePath "Start.exe" -ArgumentList "/box:$box `"`"C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe`"`""
+Set-Location -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie\"
+for ($i = 1; $i -le 7; $i++) {
+    # Configure Sandboxie box
+    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "Enabled y"
+    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "AutoRecover n"
+    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "BorderColor #00FFFF,ttl,6"
+    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "BoxNameTitle y"
+    Start-Process -FilePath "Start.exe" -ArgumentList "/box:$i `"C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe`""
 }
