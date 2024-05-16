@@ -24,7 +24,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Nam
 Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/Sandboxie-new.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip"
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\Sandboxie\SandMan.exe"
-Invoke-WebRequest -Uri "https://www.krutube.pro/download/krutubel/v9.3.15.0/krutube_9.3.15.0.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\krutube_9.3.13.1.zip"
+Invoke-WebRequest -Uri "https://www.krutube.pro/download/krutubel/v9.3.15.0/krutube_9.3.15.0.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\krutube_9.3.15.0.zip"
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\krutube_9.3.15.0.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe" -WindowStyle Maximized
 Start-Service -Name "audiosrv"
