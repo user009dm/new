@@ -56,4 +56,4 @@ for ($i = 1; $i -le 10; $i++) {
     Start-Process -FilePath "Start.exe" -ArgumentList "/box:$i `"C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe`"" -WindowStyle Maximized
 }
 
-cmd.exe /c start $macroRecorderPath -open="$chosenFilePath"
+Start-Process -FilePath $macroRecorderPath -ArgumentList "-open=$chosenFilePath"
