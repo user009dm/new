@@ -1,3 +1,4 @@
+$fileNumber = Read-Host -Prompt "Enter the number of the file you want to open (1 to 9)"
 $pagefile = Get-WmiObject Win32_ComputerSystem -EnableAllPrivileges
 $pagefile.AutomaticManagedPagefile = $false
 $pagefile.put() | Out-Null
@@ -27,7 +28,7 @@ for ($i = 1; $i -le 9; $i++) {
     $filePath = "$env:USERPROFILE\Desktop\$i.mrf"
     Invoke-WebRequest -Uri $fileUrl -OutFile $filePath
 }
-$fileNumber = Read-Host -Prompt "Enter the number of the file you want to open (1 to 9)"
+
  $chosenFilePath = "C:\Users\MS Learn Labs\Desktop\$fileNumber.mrf"
  $macroRecorderPath = "C:\Users\MS Learn Labs\Desktop\MacroRecorder\MacroRecorder.exe"
 Invoke-WebRequest -Uri "https://www.macrorecorder.com/MacroRecorder_Portable.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\MacroRecorder_Portable.zip"
