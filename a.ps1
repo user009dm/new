@@ -1,4 +1,4 @@
-$fileNumber = Read-Host -Prompt "Enter the number of the file you want to open (1 to 9)"
+
 $pagefile = Get-WmiObject Win32_ComputerSystem -EnableAllPrivileges
 $pagefile.AutomaticManagedPagefile = $false
 $pagefile.put() | Out-Null
