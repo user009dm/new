@@ -35,6 +35,7 @@ for ($i = 1; $i -le 9; $i++) {
  $macroRecorderPath = "C:\Users\MS Learn Labs\Desktop\MacroRecorder\MacroRecorder.exe"
 Invoke-WebRequest -Uri "https://www.macrorecorder.com/MacroRecorder_Portable.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\MacroRecorder_Portable.zip"
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\MacroRecorder_Portable.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
+taskkill /f /im OneDrive.exe
 
 Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/Sandboxie-new.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip"
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
