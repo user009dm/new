@@ -44,14 +44,12 @@ Invoke-WebRequest -Uri "https://www.krutube.pro/download/krutubel/v10.0.0.0/krut
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\krutube_10.0.0.0.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe" -WindowStyle Maximized
 Start-Service -Name "audiosrv"
-Stop-Process -Name "sqlservr", "Batch", "w3wp", "explorer" -Force
-Start-Process -FilePath "explorer.exe"
 Start-Sleep -Seconds 15
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe" -WindowStyle Maximized
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 Set-Location -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie\"
-for ($i = 1; $i -le 10; $i++) {
+for ($i = 1; $i -le 7; $i++) {
     # Configure Sandboxie box
     & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "Enabled y"
     & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "AutoRecover n"
