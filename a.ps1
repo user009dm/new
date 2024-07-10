@@ -49,7 +49,7 @@ Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe" -Wi
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 Set-Location -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie\"
-for ($i = 1; $i -le 7; $i++) {
+for ($i = 1; $i -le 10; $i++) {
     # Configure Sandboxie box
     & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "Enabled y"
     & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "AutoRecover n"
