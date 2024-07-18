@@ -45,7 +45,6 @@ Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip" -Destina
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\Sandboxie\SandMan.exe"
 Start-Service -Name "audiosrv"
 Start-Sleep -Seconds 15
-Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe" -WindowStyle Maximized
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 Set-Location -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie\"
