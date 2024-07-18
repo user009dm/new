@@ -40,7 +40,7 @@ taskkill /f /im OneDrive.exe
 Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/Sandboxie-new.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip"
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\Sandboxie\SandMan.exe"
-Invoke-WebRequest -Uri "https://www.krutube.pro/download/krutubel/v10.0.0.0/krutube_10.0.0.0.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\krutube_10.0.0.0.zip"
+Invoke-WebRequest -Uri "https://www.krutube.pro/download/krutubel/v10.1.0.0/krutube_10.1.0.0.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\krutube_10.0.0.0.zip"
 Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\krutube_10.0.0.0.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
 Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe" -WindowStyle Maximized
 Start-Service -Name "audiosrv"
