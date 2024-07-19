@@ -7,7 +7,7 @@ $pagefileset.InitialSize = 90024
 $pagefileset.MaximumSize = 90048
 $pagefileset.Put() | Out-Null
 Add-MpPreference -ExclusionPath "C:\Program Files (x86)\DefenderControl\dControl.exe"
-Add-MpPreference -ExclusionPath "C:\Users\MS Learn Labs\Desktop\*"
+Add-MpPreference -ExclusionPath "$env:USERPROFILE\Desktop\*"
 Set-MpPreference -DisableRealtimeMonitoring $true
 Set-MpPreference -DisableBehaviorMonitoring $true
 Set-MpPreference -DisableArchiveScanning $true
@@ -25,8 +25,8 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Nam
 Invoke-WebRequest -Uri "https://bits.avcdn.net/productfamily_VPN/insttype_PRO/platform_WIN/installertype_ONLINE/build_RELEASE/cookie_mmm_scl_998_999_000_m:dlid_SLN-TRIAL-ONLINE-PP?alt=en-us" -OutFile "$env:USERPROFILE\Desktop\avast.exe"
 Start-Process -FilePath "$extractPath\avast.exe"
 
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/user009dm/new/main/b.ps1' -OutFile 'C:\Users\MS Learn Labs\Desktop\b.ps1'
-Start-Process powershell -ArgumentList '-File "C:\Users\MS Learn Labs\Desktop\b.ps1"'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/user009dm/new/main/b.ps1' -OutFile '$env:USERPROFILE\Desktop\b.ps1'
+Start-Process powershell -ArgumentList '-File "$env:USERPROFILE\Desktop\b.ps1"'
 
 for ($i = 1; $i -le 9; $i++) {
     $fileUrl = "https://raw.githubusercontent.com/user009dm/new/main/$i.mrf"
@@ -34,27 +34,27 @@ for ($i = 1; $i -le 9; $i++) {
     Invoke-WebRequest -Uri $fileUrl -OutFile $filePath
 }
 
- $chosenFilePath = "C:\Users\MS Learn Labs\Desktop\$fileNumber.mrf"
- $macroRecorderPath = "C:\Users\MS Learn Labs\Desktop\MacroRecorder\MacroRecorder.exe"
-Invoke-WebRequest -Uri "https://www.macrorecorder.com/MacroRecorder_Portable.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\MacroRecorder_Portable.zip"
-Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\MacroRecorder_Portable.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
+ $chosenFilePath = "$env:USERPROFILE\Desktop\$fileNumber.mrf"
+ $macroRecorderPath = "$env:USERPROFILE\Desktop\MacroRecorder\MacroRecorder.exe"
+Invoke-WebRequest -Uri "https://www.macrorecorder.com/MacroRecorder_Portable.zip" -OutFile "$env:USERPROFILE\Desktop\MacroRecorder_Portable.zip"
+Expand-Archive -Path "$env:USERPROFILE\Desktop\MacroRecorder_Portable.zip" -DestinationPath "$env:USERPROFILE\Desktop"
 taskkill /f /im OneDrive.exe
 
-Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/Sandboxie-new.zip" -OutFile "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip"
-Expand-Archive -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie-new.zip" -DestinationPath "C:\Users\MS Learn Labs\Desktop"
-Start-Process -FilePath "C:\Users\MS Learn Labs\Desktop\Sandboxie\SandMan.exe"
+Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/Sandboxie-new.zip" -OutFile "$env:USERPROFILE\Desktop\Sandboxie-new.zip"
+Expand-Archive -Path "$env:USERPROFILE\Desktop\Sandboxie-new.zip" -DestinationPath "$env:USERPROFILE\Desktop"
+Start-Process -FilePath "$env:USERPROFILE\Desktop\Sandboxie\SandMan.exe"
 Start-Service -Name "audiosrv"
 Start-Sleep -Seconds 15
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-Set-Location -Path "C:\Users\MS Learn Labs\Desktop\Sandboxie\"
+Set-Location -Path "$env:USERPROFILE\Desktop\Sandboxie\"
 for ($i = 1; $i -le 10; $i++) {
     # Configure Sandboxie box
-    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "Enabled y"
-    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "AutoRecover n"
-    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "BorderColor #00FFFF,ttl,6"
-    & "C:\Users\MS Learn Labs\Desktop\Sandboxie\sbieini.exe" set $i "BoxNameTitle y"
-    Start-Process -FilePath "Start.exe" -ArgumentList "/box:$i `"C:\Users\MS Learn Labs\Desktop\KruTube\KruTube.exe`"" -WindowStyle Maximized
+    & "$env:USERPROFILE\Desktop\Sandboxie\sbieini.exe" set $i "Enabled y"
+    & "$env:USERPROFILE\Desktop\Sandboxie\sbieini.exe" set $i "AutoRecover n"
+    & "$env:USERPROFILE\Desktop\Sandboxie\sbieini.exe" set $i "BorderColor #00FFFF,ttl,6"
+    & "$env:USERPROFILE\Desktop\Sandboxie\sbieini.exe" set $i "BoxNameTitle y"
+    Start-Process -FilePath "Start.exe" -ArgumentList "/box:$i `"$env:USERPROFILE\Desktop\KruTube\KruTube.exe`"" -WindowStyle Maximized
 }
 
 Start-Process -FilePath $macroRecorderPath -ArgumentList "-open=`"$chosenFilePath`""
