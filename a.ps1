@@ -59,3 +59,5 @@ for ($i = 1; $i -le 10; $i++) {
 }
 
 Start-Process -FilePath $macroRecorderPath -ArgumentList "-open=`"$chosenFilePath`""
+
+exit
