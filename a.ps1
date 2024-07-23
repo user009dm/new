@@ -45,7 +45,6 @@ Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/Sandboxie-new.zi
 Expand-Archive -Path "$env:USERPROFILE\Desktop\Sandboxie-new.zip" -DestinationPath "$env:USERPROFILE\Desktop"
 Start-Process -FilePath "$env:USERPROFILE\Desktop\Sandboxie\SandMan.exe"
 Start-Service -Name "audiosrv"
-Start-Sleep -Seconds 15
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 Set-Location -Path "$env:USERPROFILE\Desktop\Sandboxie\"
@@ -61,3 +60,4 @@ for ($i = 1; $i -le 10; $i++) {
 Start-Process -FilePath $macroRecorderPath -ArgumentList "-open=`"$chosenFilePath`""
 
 exit
+
