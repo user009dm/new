@@ -42,7 +42,7 @@ Invoke-WebRequest -Uri "https://www.macrorecorder.com/MacroRecorder_Portable.zip
 Expand-Archive -Path "$env:USERPROFILE\Desktop\MacroRecorder_Portable.zip" -DestinationPath "$env:USERPROFILE\Desktop"
 taskkill /f /im OneDrive.exe
 
-Invoke-WebRequest -Uri "https://letsunlockphone.com/rdpdfsffddf/Sandboxie-new.zip" -OutFile "$env:USERPROFILE\Desktop\Sandboxie-new.zip"
+Invoke-WebRequest -Uri "https://github.com/user009dm/new/raw/main/Sandboxie-new.zip" -OutFile "$env:USERPROFILE\Desktop\Sandboxie-new.zip"
 Expand-Archive -Path "$env:USERPROFILE\Desktop\Sandboxie-new.zip" -DestinationPath "$env:USERPROFILE\Desktop"
 Start-Process -FilePath "$env:USERPROFILE\Desktop\Sandboxie\SandMan.exe"
 Start-Service -Name "audiosrv"
