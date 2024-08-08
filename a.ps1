@@ -36,8 +36,7 @@ for ($i = 1; $i -le 20; $i++) {
     Invoke-WebRequest -Uri $fileUrl -OutFile $filePath
 }
 
- $chosenFilePath = "$env:USERPROFILE\Desktop\$fileNumber.mrf"
- $macroRecorderPath = "$env:USERPROFILE\Desktop\MacroRecorder\MacroRecorder.exe"
+ 
 Invoke-WebRequest -Uri "https://www.macrorecorder.com/MacroRecorder_Portable.zip" -OutFile "$env:USERPROFILE\Desktop\MacroRecorder_Portable.zip"
 Expand-Archive -Path "$env:USERPROFILE\Desktop\MacroRecorder_Portable.zip" -DestinationPath "$env:USERPROFILE\Desktop"
 taskkill /f /im OneDrive.exe
@@ -58,6 +57,8 @@ for ($i = 1; $i -le 8; $i++) {
     Start-Process -FilePath "Start.exe" -ArgumentList "/box:$i `"$env:USERPROFILE\Desktop\KruTube\KruTube.exe`"" -WindowStyle Maximized
 }
 
+$chosenFilePath = "$env:USERPROFILE\Desktop\$fileNumber.mrf"
+$macroRecorderPath = "$env:USERPROFILE\Desktop\MacroRecorder\MacroRecorder.exe"
 Start-Process -FilePath $macroRecorderPath -ArgumentList "-open=`"$chosenFilePath`""
 
 exit
