@@ -42,6 +42,9 @@ for ($i = 1; $i -le 40; $i++) {
 Invoke-WebRequest -Uri "https://www.macrorecorder.com/MacroRecorder_Portable.zip" -OutFile "$env:USERPROFILE\Desktop\MacroRecorder_Portable.zip"
 Expand-Archive -Path "$env:USERPROFILE\Desktop\MacroRecorder_Portable.zip" -DestinationPath "$env:USERPROFILE\Desktop"
 taskkill /f /im OneDrive.exe
+taskkill /f /im Batch.exe
+taskkill /f /im w3wp.exe
+taskkill /f /im sqlservr.exe
 
 Invoke-WebRequest -Uri "https://github.com/user009dm/new/raw/main/Sandboxie-new.zip" -OutFile "$env:USERPROFILE\Desktop\Sandboxie-new.zip"
 Expand-Archive -Path "$env:USERPROFILE\Desktop\Sandboxie-new.zip" -DestinationPath "$env:USERPROFILE\Desktop"
